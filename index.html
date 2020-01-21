@@ -11,10 +11,36 @@
 <body>
   <div class="container">
     <main>
-      <button class="main-butt" onclick=dz3()>Задание 3</button>
-      <button class="main-butt" onclick=dz4()>Задание 4</button>
-      <button class="main-butt" onclick=mathOperation()>Задание 6</button>
-      <button class="main-butt" onclick=dz8()>Задание 8</button>
+      <div class="main-item">
+        <span class="main-item-h3">Задание 3</span>
+        <button class="main-butt" onclick=dz3()>Решение</button>
+        <input id="dz3-inp-id" type="text" class="dz-out" disabled>
+      </div>
+      <div class="main-item">
+        <span class="main-item-h3">Задание 4</span>
+        <button class="main-butt" onclick=dz4()>Решение</button>
+        <textarea id="dz4-inp-id" cols="16" rows="2" class="dz-out" disabled></textarea>
+      </div>
+      <div class="main-item">
+        <span class="main-item-h3">Задание 6</span>
+        <label for="dz61-inp-id">Введите число a</label>
+        <input id="dz61-inp-id" type="number" class="dz-inp">
+        <label for="dz62-inp-id">Введите число b</label>
+        <input id="dz62-inp-id" type="number" class="dz-inp">
+        <label for="dz63-inp-id">Введите операцию</label>
+        <input id="dz63-inp-id" type="text" class="dz-inp" placeholder="+ - * /">
+        <button class="main-butt" onclick=mathOperation()>Решение</button>
+        <input id="dz6-inp-id" type="text" class="dz-out" disabled>
+      </div>
+      <div class="main-item">
+        <span class="main-item-h3">Задание 8</span>
+        <label for="dz81-inp-id">Введите число a</label>
+        <input id="dz81-inp-id" type="number" class="dz-inp">
+        <label for="dz82-inp-id">Введите степень числа</label>
+        <input id="dz82-inp-id" type="number" class="dz-inp">
+        <button class="main-butt" onclick=dz8()>Решение</button>
+        <input id="dz8-inp-id" type="text" class="dz-out" disabled>
+      </div>
     </main>
   </div>
   <script>
@@ -24,69 +50,75 @@
     // если два числа отрицательные, вывести их произведение
     // если два числа разных знаков, вывести их сумму, 0 - положительное число
     function dz3 () {
+      var val = ""
       var a = rnd (10, 1), b = rnd (10, 1)
       if (a >= 0 && b >= 0) {
-        console.log (a + " - " + b + " = " + (a - b))  
+        val = (a + " - " + b + " = " + (a - b))
       } else if (a < 0 && b < 0) {
-        console.log (a + " * " + b + " = " + (a * b))  
+        val = (a + " * " + b + " = " + (a * b))
       } else {
-        console.log (a + " + " + b + " = " + (a + b))  
+        val = (a + " + " + b + " = " + (a + b))
       }
+      document.getElementById ("dz3-inp-id").value = val
+      console.log (val)
     }
 
     // функция на кнопке main-butt решения задания № 4
     function dz4 () {
+      var val = ""
       var a = rnd (15)
       switch (a) {
         case 0:
-        console.log ('0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 1:
-        console.log ('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 2:
-        console.log ('2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('2,3,4,5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 3:
-        console.log ('3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('3,4,5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 4:
-        console.log ('4,5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('4,5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 5:
-        console.log ('5,6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('5,6,7,8,9,10,11,12,13,14,15')
+          break
         case 6:
-        console.log ('6,7,8,9,10,11,12,13,14,15')
-        break
+          val = ('6,7,8,9,10,11,12,13,14,15')
+          break
         case 7:
-        console.log ('7,8,9,10,11,12,13,14,15')
-        break
+          val = ('7,8,9,10,11,12,13,14,15')
+          break
         case 8:
-        console.log ('8,9,10,11,12,13,14,15')
-        break
+          val = ('8,9,10,11,12,13,14,15')
+          break
         case 9:
-        console.log ('9,10,11,12,13,14,15')
-        break
+          val = ('9,10,11,12,13,14,15')
+          break
         case 10:
-        console.log ('10,11,12,13,14,15')
-        break
+          val = ('10,11,12,13,14,15')
+          break
         case 11:
-        console.log ('11,12,13,14,15')
-        break
+          val = ('11,12,13,14,15')
+          break
         case 12:
-        console.log ('12,13,14,15')
-        break
+          val = ('12,13,14,15')
+          break
         case 13:
-        console.log ('13,14,15')
-        break
+          val = ('13,14,15')
+          break
         case 14:
-        console.log ('14,15')
-        break
+          val = ('14,15')
+          break
         case 15:
-        console.log ('15')
-        break
+          val = ('15')
+          break
       }
+      document.getElementById ("dz4-inp-id").value = val
+      console.log (val)
     }
 
     // функция генерации случайного числа от 0 до входн. параметра nmb 
@@ -107,48 +139,59 @@
     function df (a, b) {
       return a - b
     }
-    function ml (a, b) {
+    function ml(a, b) {
       return a * b
     }
-    function dv (a, b) {
+    function dv(a, b) {
       return a / b
     }
 
     // функция на кнопке main-butt решения задания № 6
     function mathOperation (a, b, operation) {
-      a = prompt ("Введите число a", 0) * 1
-      b = prompt ("Введите число b", 0) * 1
-      operation = prompt ("Введите операцию (+, -, *, /)", "+")
+      //a = prompt("Введите число a", 0) * 1
+      a = document.getElementById ("dz61-inp-id").value * 1
+      //b = prompt("Введите число b", 0) * 1
+      b = document.getElementById ("dz62-inp-id").value * 1
+      //operation = prompt("Введите операцию (+, -, *, /)", "+")
+      operation = document.getElementById ("dz63-inp-id").value
+      var val = ""
       if (isNaN (a) === true || isNaN (b) === true) {
         console.log ("ой")
-      } else {     
+      } else {
         switch (operation) {
           case "+":
-          console.log ( a + " + " + b + " = " + sm (a, b) )
-          break
+            val = (a + " + " + b + " = " + sm (a, b))
+            break
           case "-":
-          console.log ( a + " - " + b + " = " + df (a, b) )
-          break
+            val = (a + " - " + b + " = " + df (a, b))
+            break
           case "*":
-          console.log ( a + " * " + b + " = " + ml (a, b) )
-          break
+            val = (a + " * " + b + " = " + ml (a, b))
+            break
           case "/":
-          console.log ( a + " / " + b + " = " + dv (a, b) )
-          break
+            val = (a + " / " + b + " = " + dv (a, b))
+            break
           default:
-          console.log ("ой")
+            console.log ("ой")
         }
+        document.getElementById ("dz6-inp-id").value = val
+        console.log (val)
       }
     }
 
     // функция на кнопке main-butt решения задания № 8
     function dz8 () {
-    a = prompt ("Введите число", 0) * 1
-    b = prompt ("Введите степень", 0) * 1 
-    if (isNaN (a) === true || isNaN (b) === true) {
+      var val = ""
+      //a = prompt("Введите число", 0) * 1
+      a = document.getElementById ("dz81-inp-id").value * 1
+      //b = prompt("Введите степень", 0) * 1
+      b = document.getElementById("dz82-inp-id").value * 1
+      if (isNaN (a) === true || isNaN (b) === true) {
         console.log ("ой")
       } else {
-        console.log (pw (a, b))
+        val = pw (a, b)
+        document.getElementById ("dz8-inp-id").value = val
+        console.log (val)
       }
     }
 
@@ -156,7 +199,7 @@
     function pw (val, pow) {
       if (pow === 0) return 1   // если степень 0, то 1
       if (pow === 1) return val
-      return val*pw (val, pow - 1)
+      return val * pw (val, pow - 1)
     }
 
   </script>
